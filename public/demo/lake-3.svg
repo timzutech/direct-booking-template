@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" role="img" aria-label="Sample photo · Kitchen">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d9b8"/><stop offset="1" stop-color="#e8a87c"/></linearGradient></defs>
+<rect width="1600" height="1067" fill="url(#s)"/>
+<circle cx="891" cy="330" r="110" fill="#fff3d6" opacity=".85"/>
+<path d="M0 639 C 300 479, 520 599, 800 549 S 1350 439, 1600 579 V1067 H0Z" fill="#7d9a8c"/>
+<path d="M0 779 C 260 679, 600 799, 900 729 S 1400 659, 1600 759 V1067 H0Z" fill="#3f5a4c"/>
+<rect y="900" width="1600" height="167" fill="#2c4136"/>
+<g transform="translate(713 640)" fill="#2c4136">
+<path d="M0 120 L160 0 L320 120 V300 H0Z"/><rect x="130" y="190" width="60" height="110" fill="#fff3d6" opacity=".9"/>
+<rect x="40" y="170" width="50" height="50" fill="#fff3d6" opacity=".7"/><rect x="230" y="170" width="50" height="50" fill="#fff3d6" opacity=".7"/>
+</g>
+<text x="60" y="1010" font-family="Georgia, serif" font-size="44" fill="#ffffff" opacity=".9">Sample photo · Kitchen</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1067" role="img" aria-label="Sample photo · Exterior">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9d8cf"/><stop offset="1" stop-color="#c98f77"/></linearGradient></defs>
+<rect width="1600" height="1067" fill="url(#s)"/>
+<circle cx="1061" cy="330" r="110" fill="#ffe9d0" opacity=".85"/>
+<path d="M0 609 C 300 449, 520 569, 800 519 S 1350 409, 1600 549 V1067 H0Z" fill="#8a7f8d"/>
+<path d="M0 749 C 260 649, 600 769, 900 699 S 1400 629, 1600 729 V1067 H0Z" fill="#55495a"/>
+<rect y="900" width="1600" height="167" fill="#352e3a"/>
+<g transform="translate(623 640)" fill="#352e3a">
+<path d="M0 120 L160 0 L320 120 V300 H0Z"/><rect x="130" y="190" width="60" height="110" fill="#ffe9d0" opacity=".9"/>
+<rect x="40" y="170" width="50" height="50" fill="#ffe9d0" opacity=".7"/><rect x="230" y="170" width="50" height="50" fill="#ffe9d0" opacity=".7"/>
+</g>
+<text x="60" y="1010" font-family="Georgia, serif" font-size="44" fill="#ffffff" opacity=".9">Sample photo · Exterior</text>
+</svg>
