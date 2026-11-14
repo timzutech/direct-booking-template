@@ -114,6 +114,8 @@ A branded preview for a prospect, with payments switched off.
    ```bash
    npm run seed
    ```
+   No Node on hand? Paste `supabase/demo-seed.sql` into the Supabase SQL editor instead — it loads the same content.
+
    This adds 3 sample properties with photos, amenities, seasonal prices, testimonials, a local guide and some calendar activity. To tailor the demo, edit the property names and locations in `/admin` (create a login with `npm run create-admin`) or directly in `scripts/seed.ts` before seeding.
 5. **Deploy** (5 min) — import into Vercel with these variables only:
 
