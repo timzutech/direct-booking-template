@@ -5,7 +5,7 @@ A reusable direct-booking site for short-term rental hosts. One codebase, rebran
 - **Stack:** Next.js (App Router, TypeScript, Tailwind) · Supabase (Postgres, Auth, Storage) · Stripe Checkout · Resend · Vercel (with Vercel Cron)
 - **Public site:** home, stays, property pages (gallery, calendar, booking widget, map), local guide, about, contact, policies
 - **Booking engine:** live pricing, per-property rules, pending → Stripe Checkout → confirmed by webhook, 30-minute holds, inquiry-only mode
-- **Calendar sync:** imports Airbnb / Vrbo / Booking.com iCal feeds every 30 minutes; exports one iCal feed per property
+- **Calendar sync:** imports Airbnb / Vrbo / Booking.com iCal feeds on a schedule (every 30 minutes on Vercel Pro); exports one iCal feed per property
 - **Admin dashboard** at `/admin`: properties, photos, pricing, calendars, bookings, testimonials, guide, policies, guest CSV export
 - **Demo mode** for spec demos: `DEMO_MODE=true`
 
@@ -78,8 +78,10 @@ npm run create-admin -- host@clientdomain.com "a-strong-password"
 ### 10. Deploy to Vercel
 - [ ] Import the repo in Vercel and add **every** variable from `.env.example` (Production, and Preview if used). Set `NEXT_PUBLIC_SITE_URL` to the final domain and `DEMO_MODE=false`.
 - [ ] Set `CRON_SECRET` to a long random string. Vercel Cron sends it automatically.
-- [ ] Deploy. `vercel.json` schedules `/api/cron/sync-calendars` every 30 minutes.
-  - **A 30-minute schedule needs the Vercel Pro plan.** On Hobby, cron jobs run at most once a day: change the schedule in `vercel.json` to `0 5 * * *` and rely on the **Sync now** button, or call the endpoint from an external scheduler with the `Authorization: Bearer <CRON_SECRET>` header.
+- [ ] Deploy. `vercel.json` schedules `/api/cron/sync-calendars`.
+  - **The schedule ships as once a day (`0 5 * * *`) so the project deploys on the Vercel Hobby plan**, which rejects anything more frequent.
+  - **For a real client, use Vercel Pro and change the schedule to `*/30 * * * *`** (every 30 minutes), then redeploy. Daily sync is not enough to prevent double bookings.
+  - If the client must stay on Hobby, call the endpoint every 30 minutes from an external scheduler with the `Authorization: Bearer <CRON_SECRET>` header, and use the **Sync now** button when needed.
 
 ### 11. Connect the domain
 - [ ] Vercel → Project → Domains → add the domain and follow the DNS instructions.

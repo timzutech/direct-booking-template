@@ -59,7 +59,7 @@ export default async function AdminOverviewPage() {
         </Panel>
 
         <div className="lg:col-span-2">
-          <Panel title="Calendar sync" description="Imported calendars from Airbnb, Vrbo and Booking.com refresh automatically every 30 minutes.">
+          <Panel title="Calendar sync" description="Imported calendars from Airbnb, Vrbo and Booking.com refresh automatically on a schedule; “Last synced” shows when each one was last read.">
             <Note tone="warning">
               <strong>Keep buffer days on.</strong> Airbnb and Vrbo only re-read your export calendar on their own schedule — it can take from 30 minutes to several hours — so a booking made here is not blocked there instantly. A buffer day on each property, and a minimum advance notice, greatly reduce the chance of a double booking.
             </Note>

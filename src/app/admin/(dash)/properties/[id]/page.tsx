@@ -109,7 +109,7 @@ export default async function EditPropertyPage({ params, searchParams }: PagePro
 
       <Panel id="calendars" title="Calendar sync" description="Keep this calendar and your Airbnb, Vrbo or Booking.com calendars in step, in both directions.">
         <Note tone="warning">
-          <strong>Good to know:</strong> we import your other calendars every 30 minutes, but Airbnb and Vrbo re-read <em>your</em> export calendar on their own schedule — anywhere from 30 minutes to several hours. A booking made here is therefore not blocked there instantly. We recommend at least <strong>1 buffer day</strong> (currently {p.buffer_days}) and some advance notice to keep the risk of a double booking very low.
+          <strong>Good to know:</strong> we import your other calendars on a schedule (see “Last synced” below), but Airbnb and Vrbo re-read <em>your</em> export calendar on their own schedule — anywhere from 30 minutes to several hours. A booking made here is therefore not blocked there instantly. We recommend at least <strong>1 buffer day</strong> (currently {p.buffer_days}) and some advance notice to keep the risk of a double booking very low.
         </Note>
 
         <h3 className="mt-6 text-xl font-semibold text-ink">1. Import: block dates booked elsewhere</h3>
