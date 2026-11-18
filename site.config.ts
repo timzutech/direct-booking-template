@@ -8,8 +8,8 @@
 
 export const siteConfig = {
   /** Business identity */
-  name: "Juniper & Tide Stays",
-  shortName: "Juniper & Tide",
+  name: "Jupiter Tide Stays",
+  shortName: "Jupiter Tide",
   tagline: "Thoughtfully kept homes for slow mornings and long weekends.",
   description:
     "Book direct with your hosts for the best rate — no platform service fees, flexible stays, and a real person on the other end.",
@@ -19,7 +19,7 @@ export const siteConfig = {
 Booking direct means you deal with us from the first question to the last goodbye, and you never pay a platform service fee.`,
 
   /** Public site URL, without trailing slash. NEXT_PUBLIC_SITE_URL overrides this. */
-  url: "http://localhost:3000",
+  url: "https://jupitertide.com",
 
   /** Logo: path inside /public, or null to render the business name as a wordmark. */
   logo: null as string | null,
@@ -55,7 +55,7 @@ Booking direct means you deal with us from the first question to the last goodby
 
   /** Contact details */
   contact: {
-    email: "hello@example.com", // shown publicly; also the default host notification address
+    email: "support@jupitertide.com", // shown publicly; also the default host notification address
     phone: "+1 (555) 010-2030",
     address: "Lake Country & the Coast",
   },
