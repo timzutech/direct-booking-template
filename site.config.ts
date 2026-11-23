@@ -19,7 +19,7 @@ export const siteConfig = {
 Booking direct means you deal with us from the first question to the last goodbye, and you never pay a platform service fee.`,
 
   /** Public site URL, without trailing slash. NEXT_PUBLIC_SITE_URL overrides this. */
-  url: "https://jupitertide.com",
+  url: "https://direct-booking-jupiter.vercel.app",
 
   /** Logo: path inside /public, or null to render the business name as a wordmark. */
   logo: null as string | null,

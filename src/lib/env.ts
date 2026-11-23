@@ -47,6 +47,15 @@ export function isDemoMode(): boolean {
   return process.env.DEMO_MODE === "true";
 }
 
+/**
+ * Online payment is switched on by adding STRIPE_SECRET_KEY. Until then every
+ * home works as "request to book": guests send a request by email and nothing
+ * is charged.
+ */
+export function paymentsEnabled(): boolean {
+  return Boolean(process.env.STRIPE_SECRET_KEY);
+}
+
 /** Public base URL without a trailing slash. */
 export function siteUrl(): string {
   return (process.env.NEXT_PUBLIC_SITE_URL || siteConfig.url).replace(/\/+$/, "");

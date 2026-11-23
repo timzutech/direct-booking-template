@@ -4,7 +4,7 @@ import { siteConfig } from "../../../site.config";
 import { validateStay } from "@/lib/availability";
 import { isIsoDate, todayInTimezone } from "@/lib/dates";
 import { sendInquiryEmails } from "@/lib/email/booking";
-import { isDemoMode, siteUrl } from "@/lib/env";
+import { isDemoMode, paymentsEnabled, siteUrl } from "@/lib/env";
 import { formatDate, plural } from "@/lib/format";
 import { calculatePrice } from "@/lib/pricing";
 import { getStripe } from "@/lib/stripe";
@@ -89,7 +89,7 @@ export async function createBookingRequest(raw: unknown): Promise<BookingResult>
   }
 
   // 3. Save the booking. The database re-checks availability under a lock.
-  const inquiry = property.inquiry_only;
+  const inquiry = property.inquiry_only || !paymentsEnabled();
   const { data: created, error: createError } = await db.rpc("create_booking", {
     p_property_id: property.id,
     p_status: inquiry ? "inquiry" : "pending",

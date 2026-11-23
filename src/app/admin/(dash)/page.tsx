@@ -5,7 +5,7 @@ import { ActionForm, SubmitButton } from "@/components/admin/action-form";
 import { Note, PageTitle, Panel, StatusBadge } from "@/components/admin/ui";
 import { requireAdmin } from "@/lib/admin/auth";
 import { todayInTimezone } from "@/lib/dates";
-import { isDemoMode } from "@/lib/env";
+import { isDemoMode, paymentsEnabled } from "@/lib/env";
 import { formatDate, formatDateTime, formatMoney } from "@/lib/format";
 import type { Booking, IcalFeed } from "@/lib/types";
 
@@ -28,6 +28,13 @@ export default async function AdminOverviewPage() {
     <>
       <PageTitle title="Overview" />
       {isDemoMode() && <div className="mb-6"><Note tone="warning"><strong>Demo mode is on.</strong> The website shows “Preview site” and guests cannot book or pay. Set DEMO_MODE=false to go live.</Note></div>}
+      {!isDemoMode() && !paymentsEnabled() && (
+        <div className="mb-6">
+          <Note>
+            <strong>Online payment is off.</strong> Every home takes booking <em>requests</em>: guests send their dates, you get an email and reply to confirm. Requests do not block the calendar — block the dates yourself once you accept. Add your Stripe keys (STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET) in Vercel to switch on instant booking with card payment.
+          </Note>
+        </div>
+      )}
       <div className="grid gap-6 lg:grid-cols-2">
         <Panel title="Upcoming stays" description={<Link href="/admin/bookings" className="text-primary underline underline-offset-4">All bookings</Link>}>
           {upcoming.data.length === 0 ? <p className="text-sm text-ink-soft">No upcoming confirmed stays yet.</p> : (
